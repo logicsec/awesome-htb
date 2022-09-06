@@ -35,4 +35,6 @@ systemctl --user start mpd.service
 > Git Clone the Repo with Submodules
 ```sh
 git clone --recurse-submodules https://github.com/lexlogic/awesome-htb
+cd awesome-htb
+git submodule update --remote
 ```
