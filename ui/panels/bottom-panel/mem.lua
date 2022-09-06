@@ -12,8 +12,10 @@ local w = wibox.widget.textbox()
 vc.cache(vc.widgets.mem)
 
 mem.label = widgets.button.text.normal({
-   normal_bg = beautiful.transparent,
+   text_hover_bg = beautiful.xforeground,
    text_normal_bg = beautiful.xforeground,
+   hover_bg = beautiful.transparent,
+   normal_bg = beautiful.transparent,
    margins = dpi(1),
    text = "MEM",
    size = 10

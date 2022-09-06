@@ -27,7 +27,7 @@ theme.grey = "#313c40"
 theme.grey_fg = "#3b464a"
 theme.grey_fg2 = "#455054"
 theme.light_grey = "#4f5a5e"
-theme.transparent = "#00000000"
+theme.transparent = "#1a2332"
 
 --- Black
 theme.xcolor0 = "#1C252C"
@@ -131,7 +131,7 @@ theme.press_event = "#ffffff" .. "15"
 theme.release_event = "#ffffff" .. "10"
 
 --- Widgets
-theme.widget_bg = "#162026"
+theme.widget_bg = theme.htb5
 
 --- Titlebars
 theme.titlebar_enabled = true
@@ -139,7 +139,7 @@ theme.titlebar_bg = theme.xbackground
 theme.titlebar_fg = theme.xforeground
 
 --- Wibar
-theme.wibar_bg = "#0B161A"
+theme.wibar_bg = theme.htb3
 theme.wibar_height = dpi(40)
 
 --- Music

@@ -11,46 +11,6 @@ local focused = awful.screen.focused()
 
 local instance = nil
 
-local function awesome_menu()
-	return menu({
-		menu.button({
-			icon = { icon = "", font = "Material Icons Round " },
-			text = "Show Help",
-			on_press = function()
-				hotkeys_popup.show_help(nil, awful.screen.focused())
-			end,
-		}),
-		menu.button({
-			icon = { icon = "", font = "Material Icons Round " },
-			text = "Manual",
-			on_press = function()
-				awful.spawn(apps.default.terminal .. " -e man awesome")
-			end,
-		}),
-		menu.button({
-			icon = { icon = "", font = "Material Icons Round " },
-			text = "Edit Config",
-			on_press = function()
-				awful.spawn(apps.default.text_editor .. " " .. awesome.conffile)
-			end,
-		}),
-		menu.button({
-			icon = { icon = "", font = "Material Icons Round " },
-			text = "Restart",
-			on_press = function()
-				awesome.restart()
-			end,
-		}),
-		menu.button({
-			icon = { icon = "", font = "Material Icons Round " },
-			text = "Quit",
-			on_press = function()
-				awesome.quit()
-			end,
-		}),
-	})
-end
-
 local function widget()
 	return menu({
 		menu.button({
@@ -76,13 +36,7 @@ local function widget()
 			on_press = function()
 				awesome.quit()
 			end,
-		}),
-		-- menu.sub_menu_button({
-		-- 	icon = { icon = "", font = "Material Icons Round " },
-		-- 	text = "AwesomeWM",
-		-- 	text_size = 10,
-		-- 	sub_menu = awesome_menu(),
-		-- }),
+		})
 	})
 end
 

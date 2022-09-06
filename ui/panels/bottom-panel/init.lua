@@ -76,18 +76,6 @@ return function(s)
 		widget = wibox.widget.imagebox
 	}
 	local main_menu = require("ui.power-menu")
-	-- local power = wibox.widget {
-	-- 	font = beautiful.icon_font,
-	-- 	text = "",
-	-- 	buttons = {
-	-- 		awful.button({}, 1, nil, function ()
-	-- 			main_menu:toggle({
-	-- 				coords = {x = s.geometry.x + s.geometry.width - dpi(10), y = beautiful.wibar_height + dpi(10)}
-	-- 			})
-	-- 		end)
-	-- 	},
-	-- 	widget = wibox.widget.imagebox
-	-- }
 	local power = widgets.button.text.normal({
 		font = beautiful.icon_font,
 		normal_bg = beautiful.transparent,

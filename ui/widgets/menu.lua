@@ -160,7 +160,7 @@ function menu.menu(widgets, width)
 		minimum_width = width or dpi(300),
 		maximum_width = width or dpi(300),
 		shape = helpers.ui.rrect(beautiful.border_radius),
-		bg = beautiful.main_menu_bg,
+		bg = beautiful.htb3,
 		widget = wibox.layout.fixed.vertical,
 	})
 	gtable.crush(widget, menu, true)
@@ -229,7 +229,7 @@ function menu.sub_menu_button(args)
 		screen = s,
 		margins = dpi(5),
 		halign = "left",
-		normal_bg = beautiful.main_menu_bg,
+		normal_bg = beautiful.transparent,
 		normal_shape = helpers.ui.rrect(beautiful.border_radius / 2),
 		on_hover = function(self)
 			local coords = helpers.ui.get_widget_geometry(self.menu, self)
@@ -299,7 +299,7 @@ function menu.button(args)
 		forced_height = dpi(35),
 		margins = dpi(5),
 		halign = "left",
-		normal_bg = beautiful.main_menu_bg,
+		normal_bg = beautiful.transparent,
 		normal_shape = helpers.ui.rrect(beautiful.border_radius / 2),
 		on_release = function(self)
 			self.menu:hide(true)
@@ -326,7 +326,7 @@ function menu.separator()
 			forced_height = dpi(2),
 			orientation = "horizontal",
 			thickness = dpi(1),
-			color = beautiful.widget_bg,
+			color = beautiful.htb5,
 		},
 	})
 end

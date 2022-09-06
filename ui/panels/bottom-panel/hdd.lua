@@ -12,8 +12,10 @@ vc.cache(vc.widgets.fs)
 
 hdd.text = vc.register(w, vc.widgets.fs, "<span foreground='" .. beautiful.accent .."'>${/home avail_gb} GB</span>")
 hdd.label = widgets.button.text.normal({
-    normal_bg = beautiful.transparent,
+    text_hover_bg = beautiful.xforeground,
     text_normal_bg = beautiful.xforeground,
+    hover_bg = beautiful.transparent,
+    normal_bg = beautiful.transparent,
     margins = dpi(1),
     text = "HDD",
     size = 10,
