@@ -25,7 +25,7 @@ return function(s)
 		child = clock,
 		normal_bg = beautiful.transparent,
 		on_release = function()
-			awesome.emit_signal("info_panel::toggle", s)
+			awesome.emit_signal("central_panel::toggle", s)
 		end,
 	})
 
