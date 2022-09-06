@@ -27,7 +27,7 @@ theme.grey = "#313c40"
 theme.grey_fg = "#3b464a"
 theme.grey_fg2 = "#455054"
 theme.light_grey = "#4f5a5e"
-theme.transparent = "#1a2332"
+theme.transparent = "#00000000"
 
 --- Black
 theme.xcolor0 = "#1C252C"
