@@ -42,7 +42,7 @@ return function(s)
 		ontop = false,
 		visible = true,
 		placement = function(w)
-			awful.placement.bottom_right(w, {
+			awful.placement.bottom_left(w, {
 				margins = { top = beautiful.wibar_height + dpi(5), bottom = beautiful.wibar_height + dpi(5), left = dpi(5), right = dpi(5) },
 			})
 		end,

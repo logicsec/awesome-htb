@@ -18,6 +18,8 @@ local capi = { awesome = awesome, mouse = mouse, tag = tag }
 
 local menu = { mt = {} }
 
+local s = awful.screen.focused()
+
 function menu:set_pos(args)
 	args = args or {}
 
@@ -152,6 +154,7 @@ function menu.menu(widgets, width)
 	local widget = awful.popup({
 		x = 32500,
 		type = "menu",
+		screen = s,
 		visible = false,
 		ontop = true,
 		minimum_width = width or dpi(300),
@@ -223,6 +226,7 @@ function menu.sub_menu_button(args)
 
 	local widget = welevated.state({
 		forced_height = dpi(35),
+		screen = s,
 		margins = dpi(5),
 		halign = "left",
 		normal_bg = beautiful.main_menu_bg,
@@ -275,8 +279,8 @@ function menu.button(args)
 	if args.icon ~= nil then
 		icon = twidget({
 			font = args.icon.font,
-			size = args.icon_size,
-			color = beautiful.random_accent_color(),
+			size = args.icon.size,
+			color = args.icon.color or beautiful.random_accent_color(),
 			text = args.icon.icon,
 		})
 	elseif args.image ~= nil then
