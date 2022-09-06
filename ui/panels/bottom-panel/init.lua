@@ -37,6 +37,31 @@ return function(s)
 		text = "|",
 		size = 14
 	})
+	--- username
+	local user_text = wibox.widget({
+		widget = wibox.widget.textbox,
+		markup = "$ <span foreground='" .. beautiful.accent .."'> logic</span>",
+		font = beautiful.font_name .. "Normal 11",
+		valign = "center",
+	})
+
+	awful.spawn.easy_async_with_shell(
+		[[
+		sh -c '
+		fullname="$(getent passwd `whoami` | cut -d ':' -f 5 | cut -d ',' -f 1 | tr -d "\n")"
+		if [ -z "$fullname" ];
+		then
+			printf "$(whoami)@$(hostname)"
+		else
+			printf "$fullname"
+		fi
+		'
+		]],
+		function(stdout)
+			local stdout = stdout:gsub("%\n", "")
+			user_text:set_markup("$ <span foreground='" .. beautiful.accent .."'> " .. stdout .. "</span>")
+		end
+	)
 	local app_launcher = wibox.widget {
 		image   = gfs.get_configuration_dir() .. "theme/assets/htb.svg",
 		resize = true,
@@ -303,12 +328,13 @@ return function(s)
 				{
 					layout = wibox.layout.align.horizontal,
 					expand = "none",
-					
 					{
 						vpn_text,
 						vpn_ip,
 						layout = wibox.layout.fixed.horizontal,
-					}
+					},
+					nil,
+					user_text
 				},
 				left = dpi(10), 
 				right = dpi(10), 
