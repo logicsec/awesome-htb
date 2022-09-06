@@ -92,7 +92,8 @@ return function(s)
 	--- Toggle container visibility
 	awesome.connect_signal("info_panel::toggle", function(scr)
 		if scr == s then
-			s.info_panel.visible = not s.info_panel.visible
+			local focused = awful.screen.focused()
+			focused.info_panel.visible = not focused.info_panel.visible
 		end
 	end)
 end
