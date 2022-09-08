@@ -1,12 +1,13 @@
 local awful = require("awful")
 local filesystem = require("gears.filesystem")
 local config_dir = filesystem.get_configuration_dir()
+local gfs = require("gears.filesystem")
 local helpers = require("helpers")
 
 local function autostart_apps()
 	--- Compositor
 	helpers.run.check_if_running("picom --experimental-backends", nil, function()
-		awful.spawn.with_shell("picom --experimental-backends --backend glx --config ~/.config/picom/picom.conf", false)
+		awful.spawn.with_shell("picom --experimental-backends --backend glx --config ".. gfs.get_configuration_dir() .. "configuration/picom.conf", false)
 	end)
 	--- Music Server
 	-- helpers.run.run_once_pgrep("mpd")
