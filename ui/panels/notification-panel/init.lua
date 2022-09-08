@@ -12,7 +12,7 @@ return function(s)
 	s.notification_panel = awful.popup({
 		type = "dock",
 		screen = s,
-		minimum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)),
+		minimum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)) - (beautiful.wibar_height + dpi(10)),
 		maximum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)),
 		minimum_width = dpi(350),
 		maximum_width = dpi(350),
@@ -21,7 +21,7 @@ return function(s)
 		visible = false,
 		placement = function(w)
 			awful.placement.bottom_right(w, {
-				margins = { top = beautiful.wibar_height + dpi(5), bottom = dpi(5), left = dpi(5), right = dpi(5) },
+				margins = { top = beautiful.wibar_height + dpi(5), bottom = beautiful.wibar_height + dpi(5), left = dpi(5), right = dpi(5) },
 			})
 		end,
 		widget = {
