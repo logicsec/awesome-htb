@@ -34,8 +34,8 @@ return function(s)
 	s.info_panel = awful.popup({
 		type = "dock",
 		screen = s,
-		minimum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)) - (beautiful.wibar_height + dpi(10)),
-		maximum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)),
+		minimum_height = s.geometry.height - (beautiful.wibar_height + dpi(15)) - (beautiful.wibar_height + dpi(10)),
+		maximum_height = s.geometry.height - (beautiful.wibar_height + dpi(15)) - (beautiful.wibar_height + dpi(10)),
 		minimum_width = dpi(350),
 		maximum_width = dpi(350),
 		bg = beautiful.transparent,
@@ -43,7 +43,7 @@ return function(s)
 		visible = true,
 		placement = function(w)
 			awful.placement.bottom_left(w, {
-				margins = { top = beautiful.wibar_height + dpi(5), bottom = beautiful.wibar_height + dpi(5), left = dpi(5), right = dpi(5) },
+				margins = { top = beautiful.wibar_height, bottom = beautiful.wibar_height + dpi(11), left = dpi(12), right = dpi(5) },
 			})
 		end,
 		widget = {
@@ -53,7 +53,7 @@ return function(s)
 					{
 						{
 							s.calendar,
-							margins = { top = dpi(8), left = dpi(16), bottom = dpi(16), right = dpi(16) },
+							margins = { top = dpi(8), left = dpi(16), bottom = dpi(5), right = dpi(5) },
 							widget = wibox.container.margin,
 						},
 						bg = beautiful.htb5,
