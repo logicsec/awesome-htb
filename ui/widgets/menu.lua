@@ -225,7 +225,7 @@ function menu.sub_menu_button(args)
 		or nil
 
 	local widget = welevated.state({
-		forced_height = dpi(35),
+		forced_height = dpi(40),
 		screen = s,
 		margins = dpi(5),
 		halign = "left",
@@ -296,7 +296,7 @@ function menu.button(args)
 	})
 
 	return welevated.normal({
-		forced_height = dpi(35),
+		forced_height = dpi(50),
 		margins = dpi(5),
 		halign = "left",
 		normal_bg = beautiful.transparent,
