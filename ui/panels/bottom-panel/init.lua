@@ -31,8 +31,10 @@ return function(s)
 
 	local separator = widgets.button.text.normal({
 		font = "icomoon bold ",
+		text_hover_bg = beautiful.xforeground,
+		hover_bg = beautiful.transparent,
 		normal_bg = beautiful.transparent,
-		text_normal_bg = beautiful.htb4,
+		text_normal_bg = beautiful.xforeground,
 		margins = dpi(3),
 		text = "|",
 		size = 14
@@ -75,11 +77,17 @@ return function(s)
 		},
 		widget = wibox.widget.imagebox
 	}
+	app_launcher:connect_signal("mouse::enter", function(c) c.opacity = 0.5 end)
+	app_launcher:connect_signal("mouse::leave", function(c) c.opacity = 1.0 end)
+
+
 	local main_menu = require("ui.power-menu")
 	local power = widgets.button.text.normal({
 		font = beautiful.icon_font,
+		text_hover_bg = beautiful.htb2,
+		hover_bg = beautiful.transparent,
 		normal_bg = beautiful.transparent,
-		text_normal_bg = beautiful.htb2,
+		text_normal_bg = beautiful.xforeground,
 		margins = dpi(3),
 		text = "",
 		size = 10,
@@ -123,6 +131,7 @@ return function(s)
 	}
 	powershell:connect_signal("mouse::enter", function(c) c.opacity = 0.5 end)
 	powershell:connect_signal("mouse::leave", function(c) c.opacity = 1.0 end)
+
 
 	--- Taglist buttons
 	local modkey = "Mod4"
@@ -240,16 +249,22 @@ return function(s)
 	--- ~~~~~~~~~~~
 	local function notif_panel()
 		local icon = wibox.widget({
-			markup = helpers.ui.colorize_text("", beautiful.xforeground),
+			text = "",
 			align = "center",
 			valign = "center",
 			font = beautiful.icon_font .. "Round 10",
 			widget = wibox.widget.textbox,
 		})
 
+		icon:connect_signal("mouse::enter", function(c) c.opacity = 0.5 end)
+		icon:connect_signal("mouse::leave", function(c) c.opacity = 1.0 end)
+
 		local widget = wbutton.elevated.state({
 			child = icon,
+			text_hover_bg = beautiful.htb5,
+			hover_bg = beautiful.transparent,
 			normal_bg = beautiful.transparent,
+			text_normal_bg = beautiful.xforeground,
 			margins = dpi(3),
 			on_release = function()
 				awesome.emit_signal("notification_panel::toggle", s)

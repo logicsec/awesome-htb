@@ -21,8 +21,14 @@ return function()
 		layout = wibox.layout.align.horizontal,
 	})
 
+	network:connect_signal("mouse::enter", function(c) c.opacity = 0.5 end)
+	network:connect_signal("mouse::leave", function(c) c.opacity = 1.0 end)
+
 	local widget = wbutton.elevated.state({
 		child = network,
+		text_hover_bg = beautiful.htb6,
+		text_normal_bg = beautiful.xforeground,
+		hover_bg = beautiful.transparent,
 		normal_bg = beautiful.transparent,
 		on_release = function()
 			awful.spawn(apps.default.network_manager, false)

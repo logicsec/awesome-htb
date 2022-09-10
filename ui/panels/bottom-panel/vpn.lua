@@ -28,3 +28,28 @@ watch(
     vpn_ip
 )
 
+local disconnect_notice = awful.tooltip { }
+disconnect_notice:add_to_object(vpn_ip)
+
+vpn_ip:connect_signal("button::press", 
+    function(c)  
+        awful.spawn.easy_async_with_shell(
+            [[
+            sh -c 'ip addr show tun0'
+            ]],
+            function(stdout)
+                local stdout = stdout:gsub("%\n", "")
+                if(stdout == '' or stdout==nil or stdout=='Device "tun0" does not exist.') then
+                    awful.spawn.with_shell("gksudo systemctl start openvpn-client@htb.service")
+
+                else
+                    awful.spawn.with_shell("gksudo systemctl stop openvpn-client@htb.service")
+                end
+            end
+        )
+    end
+)
+vpn_ip:connect_signal("mouse::enter", function(c) c.opacity = 0.5 disconnect_notice.text = "Toggle VPN Connection" end)
+vpn_ip:connect_signal("mouse::leave", function(c) c.opacity = 1.0 end)
+
+

@@ -18,7 +18,7 @@ function _ui.add_hover_cursor(w, hover_cursor)
 	w:connect_signal("mouse::enter", function()
 		local widget = capi.mouse.current_wibox
 		if widget then
-			widget.cursor = hover_cursor
+			widget.cursor = "left_ptr"
 		end
 	end)
 
