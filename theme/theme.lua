@@ -174,7 +174,7 @@ theme.border_color_maximized = theme.titlebar_bg
 theme.border_color_fullscreen = theme.titlebar_bg
 
 --- Corner Radius
-theme.border_radius = 12
+theme.border_radius = 25
 
 --- Edge snap
 theme.snap_bg = theme.xcolor8
