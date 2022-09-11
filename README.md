@@ -1,9 +1,13 @@
 # Setup
 
+## Debian Based Install Dependencies
+```sh
+sudo apt install picom rofi acpi acpid upower jq inotify-tools xdotool xclip gpick ffmpeg blueman redshift pipewire alsa-utils brightnessctl feh maim mpv mpd mpc mpdris2 python3-mutagen ncmpcpp playerctl
+```
 
-## Install Required Dependencies and Enable Services
 
-**This setup instructions only provided for Arch Linux (and other Arch-based distributions)**
+## Arch Install Required Dependencies and Enable Services
+
 
 Assuming your _AUR Helper_ is [paru](https://github.com/Morganamilo/paru).
 
