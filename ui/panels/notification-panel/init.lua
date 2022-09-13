@@ -13,7 +13,7 @@ return function(s)
 		type = "dock",
 		screen = s,
 		minimum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)) - (beautiful.wibar_height + dpi(10)),
-		maximum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)),
+		maximum_height = s.geometry.height - (beautiful.wibar_height + dpi(10)) - (beautiful.wibar_height + dpi(10)),
 		minimum_width = dpi(350),
 		maximum_width = dpi(350),
 		bg = beautiful.transparent,
