@@ -22,7 +22,7 @@ local function autostart_apps()
 	helpers.run.run_once_grep("nm-applet")
 	helpers.run.run_once_grep("xset s off")
 	helpers.run.run_once_grep("xrandr --output DP2 --auto --left-of DP1")
-	helpers.run.run_once_grep("feh --bg-fill ".. gfs.get_configuration_dir() .. "theme/assets/wallpaper.jpg")
+	helpers.run.run_once_grep("feh --bg-fill ".. gfs.get_configuration_dir() .. "theme/assets/custom_wallpaper.jpg")
 end
 
 autostart_apps()
