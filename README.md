@@ -2,7 +2,7 @@
 
 ## Debian Based Install Dependencies
 ```sh
-sudo apt install picom rofi acpi acpid upower jq inotify-tools xdotool xclip gpick ffmpeg blueman redshift pipewire alsa-utils brightnessctl feh maim mpv mpd mpc mpdris2 python3-mutagen ncmpcpp playerctl fonts-roboto fonts-materialdesignicons-webfont
+sudo apt install picom rofi acpi acpid upower jq inotify-tools xdotool xclip gpick ffmpeg blueman redshift pipewire alsa-utils brightnessctl feh maim mpv mpd mpc mpdris2 python3-mutagen ncmpcpp playerctl fonts-roboto fonts-materialdesignicons-webfont liblua5.4-dev
 ```
 
 
